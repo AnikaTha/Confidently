@@ -1,6 +1,7 @@
+#!/usr/bin/env python
 import os
 import openai
-import apitest
+import draft_text
 import pymongo
 from pymongo import MongoClient
 
@@ -11,8 +12,8 @@ email_unconf = "Dear Bob, I am really sorry to email you so last minute like thi
 email_conf = "Dear Bob, I hope this email finds you well. I am writing to request a meeting to discuss quantum mechanics. I believe that your expertise would be valuable to me and would help me better understand quantum mechanics. I understand that your time is valuable, and I would appreciate any time you could spare for a meeting, either in-person or via video call. Please let me know your availability and I will arrange accordingly. Thank you for considering my request. I look forward to discussing quantum mechanics with you. Best regards, Veda"
 
 
-def test_confidence(email):
-
+def test_confidence(address, check):
+    email  = draft_text.draft_text(address)
     response = openai.Completion.create(
     model="text-davinci-003",
     prompt="Is this email confident? yes or no" + "\n" + email,
@@ -23,7 +24,13 @@ def test_confidence(email):
     presence_penalty=1
     )
 
-    return ("Yes") in (response["choices"][0]["text"])
+    if ("Yes") in (response["choices"][0]["text"]):
+        return "Email is confident!"
+    else:
+        if(check):
+            return 'Your email could be improved, here are some words that make you sound less confident: ' + ' '.join(findMatches(email))
+        else:
+            return 'Your email could be improved, here is one way to make your email sound more confident: ' + rewrite_email(email)
 
 
 
@@ -53,7 +60,9 @@ def findMatches(email):
     return found_words    
 
 
-print(findMatches(email_unconf))
+#print(findMatches(email_unconf))
 #print(rewrite_email(email_unconf))
 
-#print(test_confidence(apitest.draft_text("amritab@vt.edu")))
+
+#print(test_confidence("amritab@vt.edu"))
+

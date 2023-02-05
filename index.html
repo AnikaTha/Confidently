@@ -11,6 +11,29 @@
         <h3> email your way to the top.</h3>
     </div>
     <img id="icon" src="./icon.png">
+    <input type="button" id='script' name="scriptbutton" value="Check Email" onclick="goPython()">
+    <input type="button" id='script' name="scriptbutton" value="Rewrite Email" onclick="goPython2()">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script> 
+        function goPython(){
+            $.ajax({
+              url: "http://127.0.0.1:5000/check",
+              context: document.body
+            }).done(function(data) {
+             alert(data);
+            });
+        }
+        function goPython2(){
+            $.ajax({
+              url: "http://127.0.0.1:5000/rewrite",
+              context: document.body
+            }).done(function(data) {
+             alert(data);
+            });
+        }
+    </script> 
 </head>
-    <script src = "script.js"></script>
-</html>
+    <script src = "script.js"></script> 
+</html> 

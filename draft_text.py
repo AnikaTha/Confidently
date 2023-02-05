@@ -45,6 +45,5 @@ def draft_text(email_address):
             return message.decode('utf-8').strip()
 
     except HttpError as error:
-        # TODO(developer) - Handle errors from gmail API.
         print(f'An error occurred: {error}')
 

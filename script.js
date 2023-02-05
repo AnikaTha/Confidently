@@ -24,15 +24,9 @@ button2.style.borderRadius = "8px";
 button2.style.backgroundColor = "rgb(173,255,47)";
 
 
-
-
-
-
-
-button.addEventListener("click", function() {
+button.addEventListener("click", function() {s
   alert("Button was clicked! D:");
 });
 
 document.body.appendChild(button);
 document.body.appendChild(button2);
-
