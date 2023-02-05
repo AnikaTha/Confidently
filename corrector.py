@@ -2,7 +2,7 @@ import os
 import openai
 
 # Load your API key from an environment variable or secret management service
-openai.api_key = "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"
+openai.api_key = "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"
 
 # os.getenv("OPENAI_API_KEY")
 
@@ -26,28 +26,10 @@ def test_confidence(email):
 
 
 
-
-def test_confidence(email):
-
-    response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt="Is this email confident? yes or no" + "\n" + email,
-    temperature=0.21,
-    max_tokens=150,
-    top_p=1,
-    frequency_penalty=1,
-    presence_penalty=1
-    )
-
-    ans = ("Yes") in (response["choices"][0]["text"])
-
-    return ans
-
-
 def rewrite_email(email):
     response = openai.Completion.create(
     model="text-davinci-003",
-    prompt="Rewrite this email more assertively" + "\n" + email,
+    prompt="Rewrite this email more assertively and concisely" + "\n" + email,
     temperature=0.21,
     max_tokens=150,
     top_p=1,
@@ -55,4 +37,7 @@ def rewrite_email(email):
     presence_penalty=1
     )
 
-    return response["choices"][0]["text"]
+    print(response["choices"][0]["text"])
+
+
+rewrite_email(email_unconf) 
