@@ -1,3 +1,48 @@
+@font-face {
+    font-family: p_font;
+    src: url(p_font.ttf);
+}
+
+#icon {
+    top: 30px;
+    right: 110px;
+    width: 50px;
+    height: 40px;
+    position: fixed;
+}
+
 body {
-    background-color: #ffba6b;
+    border: 5px dashed white;
+    /* background-color: #9a9cff; */
+    /* background-color: #7b7ddd; */
+    /* background-color: #4dded2; */
+    background-color: #8f39e5;
+    height: 140px;
+    width: 400px;
+    padding: 17px;
+    margin: 0px;
+}
+
+.main_stuff{
+    font-family: p_font;
+    color: rgb(250, 250, 250);
+    padding: 0%;
+}
+
+h1{
+    margin-bottom: 0;
+}
+
+
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+
+.words {
+    /* border-bottom: 2px #ff6b6b; */
+
 }
