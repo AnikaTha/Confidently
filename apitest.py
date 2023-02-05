@@ -42,7 +42,7 @@ def draft_text(email_address):
         if(body['size'] > 0):
             message = body['data']
             message = base64.urlsafe_b64decode(message.encode())
-            print(message.decode('utf-8').strip())
+            return message.decode('utf-8').strip()
 
     except HttpError as error:
         # TODO(developer) - Handle errors from gmail API.

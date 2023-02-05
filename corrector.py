@@ -1,5 +1,6 @@
 import os
 import openai
+import apitest
 import pymongo
 from pymongo import MongoClient
 
@@ -42,8 +43,7 @@ def rewrite_email(email):
 
 def findMatches(email): 
     #connect database
-    CONNECTION_STRING = "mongodb+srv://confidently:hackviolet23@cluster1.vdxev7c.mongodb.net/test"
-    client = MongoClient(CONNECTION_STRING)
+    client = pymongo.MongoClient("mongodb+srv://confidently:hackviolet23@cluster1.vdxev7c.mongodb.net/?retryWrites=true&w=majority")
     db = client['PhraseData']
     print(db)
     col = db.Phrases
@@ -53,5 +53,7 @@ def findMatches(email):
     return found_words    
 
 
-#print(findMatches(email_unconf))
-print(rewrite_email(email_unconf))
+print(findMatches(email_unconf))
+#print(rewrite_email(email_unconf))
+
+#print(test_confidence(apitest.draft_text("amritab@vt.edu")))
