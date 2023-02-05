@@ -13,16 +13,21 @@
     <img id="icon" src="./icon.png">
     <input type="button" id='script' name="scriptbutton" value="Check Email" onclick="goPython()">
     <input type="button" id='script' name="scriptbutton" value="Rewrite Email" onclick="goPython2()">
-
+    <p> Feedback: </p>
+    <p id="text"> </p>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <script> 
+        
         function goPython(){
             $.ajax({
               url: "http://127.0.0.1:5000/check",
               context: document.body
             }).done(function(data) {
-             alert(data);
+            //  alert(data);
+            //  document.write(data);
+             document.getElementById("text").innerHTML = data;
+
             });
         }
         function goPython2(){
@@ -30,7 +35,11 @@
               url: "http://127.0.0.1:5000/rewrite",
               context: document.body
             }).done(function(data) {
-             alert(data);
+            //  alert(data);
+            // document.write(data);
+            // document.write("hi");
+            document.getElementById("text").innerHTML = data;
+
             });
         }
     </script> 

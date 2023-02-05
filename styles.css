@@ -5,22 +5,25 @@
 
 #icon {
     top: 30px;
-    right: 110px;
-    width: 50px;
-    height: 40px;
+    right: 850px;
+    width: 60px;
+    height: 50px;
     position: fixed;
 }
 
 body {
     border: 5px dashed white;
-    /* background-color: #9a9cff; */
-    /* background-color: #7b7ddd; */
-    /* background-color: #4dded2; */
-    background-color: #8f39e5;
-    height: 140px;
-    width: 400px;
+    background-color: #5557ce;
+    height: 340px;
+    /* width: 400px; */
     padding: 17px;
     margin: 0px;
+}
+
+#text {
+    font-family: p_font;
+    color: rgb(250, 250, 250);
+    font-size: small;
 }
 
 .main_stuff{
@@ -40,9 +43,30 @@ h3 {
     margin-bottom: 30px;
 }
 
+#script{
+    background-color: "white";
+        width: 130px;
+        height: 50px;
+        box-shadow: none;
+        margin-right: 100px;
+        border-radius: 8px;
+        color: rgb(250, 250, 250);
+        background-color: rgb(214, 220, 48);
+        font-family: "p_font";
+        font-size: 9px;
+        border-color: white;
+        margin-bottom: 20px;
+ }
+ 
+p {
+    font-family: p_font;
+    color: rgb(250, 250, 250);
+    font-size: small;
 
+}
 
 .words {
     /* border-bottom: 2px #ff6b6b; */
 
 }
+
