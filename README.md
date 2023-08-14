@@ -1,5 +1,7 @@
 # Confidently
 
+### [Devpost link](https://devpost.com/software/ok-yraxed)
+
 ## What it does
 Women tend to qualify their language and undermine themselves in their delivery, especially when communicating with colleagues and peers. They will frequently use qualifying words such as "just", "might", and "could" in emails which results in an apprehensive and diffident tone. We created "Confidently": a Google Chrome extension based website which helps women write more confident and assertive emails. Our extension will assess an email as it is being written by a user, and then provide the user with insight and suggestions on how to make the email more confident. These suggestions will appear to the user on a linked website.
 
